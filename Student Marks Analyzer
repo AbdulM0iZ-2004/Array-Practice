@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int sum = 0;
+    float average;
+    int highest, lowest;
+    int aboveAverage = 0;
+    int size = 5;
+    int marks[size];
+
+    for (int i=0; i < size; i++){
+        cout << "Enter marks for student " << i + 1 << ": ";
+        cin >> marks[i];
+        sum += marks[i];
+    }
+    average = (float)sum / size;
+    highest = marks[0];
+    lowest = marks[0];
+
+    for (int i=0; i < size; i++){
+        if (marks[i] > highest){
+            highest = marks[i];
+        }
+    }
+    
+    for (int i=0; i < size; i++){
+        if (marks[i] < lowest){
+            lowest = marks[i];
+        }
+    }
+    for (int i=0; i < size; i++){
+        if (marks[i] > average){
+            aboveAverage++;
+        }
+    }
+
+    cout << "Average Marks are: " << average <<endl;
+    cout << "Highest Marks are: " << highest <<endl;
+    cout << "Lowest Marks are: " << lowest <<endl;
+    cout << "Count of Above Average Students: " << aboveAverage << endl;
+}
