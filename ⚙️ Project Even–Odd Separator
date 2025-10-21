@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+int main (){
+    const int size = 10;
+    int numbers[size];
+
+    int odd[size], even[size];
+    int evenCount = 0, oddCount = 0;
+
+    cout << "Enter 10 Numbers" << endl;
+    for (int i = 0; i < size; i++){
+        cout << "Enter Number " << i+1 << ": ";
+        cin >> numbers[i];
+    }
+
+    for (int i = 0; i < size; i++){
+        if (numbers[i] % 2 == 0 ){
+            even[evenCount] = numbers[i];
+            evenCount++;
+        }
+        else {
+            odd[oddCount] = numbers[i];
+            oddCount++;
+        }
+    }
+
+    cout << "Even Numbers: " << endl;
+    if (evenCount == 0)
+        cout << "None";
+    else
+        for (int i = 0; i < evenCount; i++){
+            cout << even[i] << " " << endl;
+        }
+    cout << "ODD Numbers: " << endl;
+    if (oddCount == 0)
+        cout << "None";
+    else
+        for (int i = 0; i < oddCount; i++){
+            cout << odd[i] << " " << endl;
+        }
+}
